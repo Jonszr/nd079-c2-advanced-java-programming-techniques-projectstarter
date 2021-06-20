@@ -60,6 +60,11 @@
             <version>5.6.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -75,10 +80,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -119,6 +126,8 @@
                             </value>
                         </property>
                     </systemProperties>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <shutdown>kill</shutdown>
                 </configuration>
                 <version>3.0.0-M5</version>
                 <dependencies>
